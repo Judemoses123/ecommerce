@@ -1,0 +1,16 @@
+.label{
+    font-size: 1.5rem;
+    font-family: fangsong;
+    font-weight: bold;
+}
+.grid{
+    width: 70vw;
+    margin: auto;
+    padding: 1rem;
+    box-sizing: border-box;
+    align-content: center;
+    justify-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}

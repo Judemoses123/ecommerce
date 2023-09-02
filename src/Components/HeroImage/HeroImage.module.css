@@ -1,0 +1,11 @@
+.main{
+    width: calc(100vw-2rem);
+    padding: 1rem;
+    background-color: #7a7a7a;
+}
+.label{
+    color: white;
+    font-size: 100px;
+    font-family: 'fangsong ariel';
+    font-weight: bold;
+}

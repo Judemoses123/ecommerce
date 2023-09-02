@@ -1,0 +1,44 @@
+.youtube{
+    background-image: url("https://e7.pngegg.com/pngimages/163/425/png-clipart-youtube-computer-icons-logo-subscribe-angle-desktop-wallpaper.png");
+    width: 2rem;
+    aspect-ratio: 1;
+    background-size: cover;
+    margin: 1rem;
+    border-radius: 50%;
+    filter: invert(1);
+    scale: 1.1;
+}
+.spotify{
+    background-image: url("https://prasadyash2411.github.io/ecom-website/img/Spotify%20Logo.png");
+    width: 2rem;
+    aspect-ratio: 1;
+    background-size: cover;
+    margin: 1rem;
+    border-radius: 50%;
+}
+.facebook{
+    background-image: url("https://prasadyash2411.github.io/ecom-website/img/Facebook%20Logo.png");
+    width: 2rem;
+    aspect-ratio: 1;
+    background-size: cover;
+    margin: 1rem;
+    border-radius: 50%;
+}
+.left{
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    font-family: pangsong;
+}
+.right{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.main{
+    display: flex;
+    padding: 1rem 2rem;
+    background-color: black;
+    width: calc(100vw-2rem);
+    justify-content: space-between;
+}
