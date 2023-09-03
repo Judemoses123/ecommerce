@@ -2,8 +2,7 @@
     display: grid;
     grid-template-columns: 2fr 1fr 2fr;
     width: 100%;
-    padding: 1rem 0rem;
-    border-bottom: 1px solid black;
+    padding: 0.5rem 0rem;
     align-content: center;
 }
 .img{
@@ -14,7 +13,7 @@
 }
 .title{
     font-weight: bold;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 .quantity{
     display: flex;
@@ -22,12 +21,14 @@
     padding: 1rem;
     align-items: center;
     margin: 0rem 1rem;
+    border-bottom: 1px solid black;
 }
 .left{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     margin: 0rem 1rem;
+    border-bottom: 1px solid black;
 }
 .btn{
     background-color:crimson;
@@ -42,7 +43,9 @@
     display: flex;
     align-items: center;
     font-weight: bold;
-    margin: 0rem 1rem;
+    /* margin: 0rem 1rem; */
+    justify-content: center;
+    border-bottom: 1px solid black;
 }
 .count{
     display: flex;

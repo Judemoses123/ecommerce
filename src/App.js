@@ -20,7 +20,7 @@ function App() {
         {show && <CartOffCanvas toggleShow={toggleShow}/>}
         <MainNavbar toggleShow={toggleShow} />
         <HeroImage />
-        <Main />
+        <Main toggleShow={toggleShow}/>
         <Footer />
       </div>
     </CartContextProvider>

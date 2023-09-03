@@ -9,7 +9,7 @@ const CartItems = (props) => {
       </div>
       <span className={style.price}>{props.price}</span>
       <div className={style.quantity}>
-        <span className={style.count}>1</span>
+        <span className={style.count}>{props.quantity}</span>
         <button className={style.btn}>Remove</button>
       </div>
     </div>
