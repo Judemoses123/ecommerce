@@ -7,7 +7,7 @@ const MainSection = (props) => {
       <div className={style.grid}>
         {props.productsArr.map((item)=>{
             return(
-                <MainCard title={item.title} price={item.price} imageUrl={item.imageUrl}/>
+                <MainCard key={item.title} title={item.title} price={item.price} imageUrl={item.imageUrl}/>
             )
         })}
       </div>

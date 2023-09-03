@@ -1,0 +1,59 @@
+.main {
+  background-color: white;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  z-index: 2;
+  top: 3rem;
+  right: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  height: 90vh;
+  overflow: auto;
+  filter: drop-shadow(1px 1px 5px grey);
+}
+.heading {
+  font-family: "Metal Mania";
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 1rem;
+}
+.row {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 2fr 1fr 2fr;
+  place-items: start;
+  gap: 2rem;
+}
+.item {
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: initial;
+  border-bottom: 1px solid black;
+  width: 100%;
+}
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: initial;
+  border-bottom: 1px solid black;
+  width: 100%;
+}
+.quantity {
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: initial;
+  border-bottom: 1px solid black;
+  width: 100%;
+}
+
+.btn{
+  position: absolute;
+  right: 1rem;
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  font-size: 1rem;
+}

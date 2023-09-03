@@ -1,0 +1,51 @@
+.main{
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    width: 100%;
+    padding: 1rem 0rem;
+    border-bottom: 1px solid black;
+    align-content: center;
+}
+.img{
+    width: 5rem;
+    aspect-ratio: 1;
+    background-size: cover;
+    border-radius: 10px;
+}
+.title{
+    font-weight: bold;
+    padding: 1rem;
+}
+.quantity{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    align-items: center;
+    margin: 0rem 1rem;
+}
+.left{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0rem 1rem;
+}
+.btn{
+    background-color:crimson;
+    color:white;
+    border: none;
+    border-radius: 5px;
+    padding: none !important;
+    display: flex;
+    height: fit-content;
+}
+.price{
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    margin: 0rem 1rem;
+}
+.count{
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
