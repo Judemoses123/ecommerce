@@ -50,7 +50,7 @@ const Main = (props) => {
     <div className={style.main}>
       <MainSection title={"MUSIC"} productsArr={productsArr} />
       <MainSection title={"MERCH"} productsArr={merchArr} />
-      <Button onClick={clickHandler} variant="primary">SEE THE CART</Button>
+      <Button onClick={clickHandler} variant="primary">{props.show?'HIDE THE CART':'SEE THE CART'}</Button>
     </div>
   );
 };

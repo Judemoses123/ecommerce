@@ -1,16 +1,16 @@
-import { useContext } from 'react';
-import Badge from 'react-bootstrap/Badge';
-import Button from 'react-bootstrap/Button';
-import CartContext from './CartContext';
+import { useContext } from "react";
+import Badge from "react-bootstrap/Badge";
+import Button from "react-bootstrap/Button";
+import CartContext from "./CartContext";
 
 function CartButton(props) {
-  const ctx= useContext(CartContext);
-  const clickHandler=()=>{
+  const ctx = useContext(CartContext);
+  const clickHandler = () => {
     props.toggleShow();
-  }
+  };
   return (
     <Button variant="primary" onClick={clickHandler}>
-      Cart  <Badge bg="secondary">{ctx.cartItems.length}</Badge>
+      Cart <Badge bg="warning">{ctx.cartItems.length}</Badge>
       <span className="visually-hidden">unread messages</span>
     </Button>
   );

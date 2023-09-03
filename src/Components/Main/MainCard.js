@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import CartContext from '../Cart/CartContext';
-
+import style from './MainSection.module.css'
 function MainCard(props) {
   const ctx= useContext(CartContext);
   const clickHandler=()=>{

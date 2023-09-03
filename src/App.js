@@ -1,29 +1,26 @@
-import "./App.css";
-import MainNavbar from "./Components/Navbar/Navbar";
-import HeroImage from "./Components/HeroImage/HeroImage";
-import Main from "./Components/Main/Main";
-import Footer from "./Components/Footer/Footer";
-import CartOffCanvas from "./Components/Cart/CartOffCanvas";
-import CartContextProvider from "./Components/Cart/CartContextProvider";
-import { useContext , useEffect, useState} from "react";
-import CartContext from "./Components/Cart/CartContext";
+
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import About from "./Components/Pages/About";
+import Home from "./Components/Pages/Home";
 function App() {
-  const [show, setShow]= useState(false);
-  const toggleShow=()=>{
-    setShow((prev)=>{
-      return !prev;
-    })
-  }
+  
+  const router = createBrowserRouter([
+    {
+      path: "",
+      element: <Home/>,
+    },
+    {
+      path:"home",
+      element: <Home/>
+    },
+    {
+      path: "/about",
+      element: <About/>,
+    },
+  ]);
   return (
-    <CartContextProvider>
-      <div className="App">
-        {show && <CartOffCanvas toggleShow={toggleShow}/>}
-        <MainNavbar toggleShow={toggleShow} />
-        <HeroImage />
-        <Main toggleShow={toggleShow}/>
-        <Footer />
-      </div>
-    </CartContextProvider>
+    <RouterProvider router={router}>
+    </RouterProvider>
   );
 }
 

@@ -13,6 +13,9 @@
   height: 90vh;
   overflow: auto;
   filter: drop-shadow(1px 1px 5px grey);
+  @media (max-width:550px) {
+    width: 100vw;
+  }
 }
 .heading {
   font-family: "Metal Mania";
