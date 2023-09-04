@@ -1,28 +1,35 @@
-import style from "./Home.module.css";
-import MainNavbar from "../Navbar/Navbar";
-import HeroImage from "../HeroImage/HeroImage";
-import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
-import CartOffCanvas from "../Cart/CartOffCanvas";
-import CartContextProvider from "../Cart/CartContextProvider";
-import { useState } from "react";
+import HeroImage from "../HeroImage/HeroImage";
+import HeroMain from "../Main/HeroMain";
+import MainNavbar from "../Navbar/Navbar";
 const Home = () => {
-  const [show, setShow] = useState(false);
-  const toggleShow = () => {
-    setShow((prev) => {
-      return !prev;
-    });
-  };
   return (
-    <CartContextProvider>
-      <div className={style.App}>
-        {show && <CartOffCanvas toggleShow={toggleShow} />}
-        <MainNavbar toggleShow={toggleShow} showCartButton={true}/>
-        <HeroImage />
-        <Main toggleShow={toggleShow} show={show} />
-        <Footer />
-      </div>
-    </CartContextProvider>
+    <div style={{ textAlign: "center" }}>
+      <MainNavbar />
+      <HeroImage>
+        <span style={{
+            color:'white',
+            fontSize:'1.5rem',
+            backgroundColor:'darkgrey',
+            padding:'0.8rem 2rem',
+            borderRadius:'8px'
+            // fontWeight:'bold'
+        }}>Get our Latest Album</span>
+        <div
+          style={{
+            backgroundImage:
+              'url(https://www.nicepng.com/png/full/11-118375_citekeeper-is-a-crowdsourced-play-icon-white-png.png)',
+            backgroundSize:'contain',
+            width:'4rem',
+            height:'4rem',
+            margin:'1rem',
+            backgroundRepeat: 'no-repeat'
+          }}
+        ></div>
+      </HeroImage>
+      <HeroMain/>
+      <Footer/>
+    </div>
   );
 };
 export default Home;
