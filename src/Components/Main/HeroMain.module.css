@@ -32,7 +32,7 @@
 }
 .button{
     border: none;
-    background-color: rgb(53, 53, 53);
+    background: black;
     color: white;
     padding: 5px;
     border-radius: 5px;
