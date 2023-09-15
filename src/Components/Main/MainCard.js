@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import CartContext from '../Cart/CartContext';
-import style from './MainSection.module.css'
+import { Link } from 'react-router-dom';
 function MainCard(props) {
   const ctx= useContext(CartContext);
   const clickHandler=()=>{
@@ -16,7 +16,9 @@ function MainCard(props) {
   }
   return (
     <Card style={{margin:'1rem',maxWidth:'20vw'}}>
+      <Link to={`/store/${props.id}`}>
       <Card.Img variant="top" src={props.imageUrl} />
+      </Link>
       <Card.Body >
         <Card.Title>{props.title}</Card.Title>
         <div style={{display:'flex', justifyContent:'space-between', margin:'2rem 1rem', alignItems:'center'}}>

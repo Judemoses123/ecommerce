@@ -6,6 +6,7 @@ import Footer from "../Footer/Footer";
 import CartOffCanvas from "../Cart/CartOffCanvas";
 import CartContextProvider from "../Cart/CartContextProvider";
 import { useState } from "react";
+import StoreContextProvider from "./StoreContextProvider";
 const Store = () => {
   const [show, setShow] = useState(false);
   const toggleShow = () => {
@@ -14,15 +15,17 @@ const Store = () => {
     });
   };
   return (
-    <CartContextProvider>
-      <div className={style.App}>
-        {show && <CartOffCanvas toggleShow={toggleShow} />}
-        <MainNavbar toggleShow={toggleShow} showCartButton={true}/>
-        <HeroImage />
-        <Main toggleShow={toggleShow} show={show} />
-        <Footer />
-      </div>
-    </CartContextProvider>
+    <StoreContextProvider>
+      <CartContextProvider>
+        <div className={style.App}>
+          {show && <CartOffCanvas toggleShow={toggleShow} />}
+          <MainNavbar toggleShow={toggleShow} showCartButton={true} />
+          <HeroImage />
+          <Main toggleShow={toggleShow} show={show} />
+          <Footer />
+        </div>
+      </CartContextProvider>
+    </StoreContextProvider>
   );
 };
 export default Store;

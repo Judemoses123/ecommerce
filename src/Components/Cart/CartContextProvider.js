@@ -5,6 +5,7 @@ const CartContextProvider = (props) => {
   const [itemsState, setItemsState] = useState([
   ]);
   const addItem = (item) => {
+    console.log(item);
     setItemsState((prev) => {
       const found = prev.find((obj) => {
         return (obj.title === item.title)
