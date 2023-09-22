@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding: 2rem;
 }
 .label {
   font-weight: bold;
@@ -17,12 +18,12 @@
   justify-content: space-between;
   width: 50vw;
   padding: 2rem;
-  margin: 1rem;
+  margin: 2rem;
   border-radius: 5px;
 }
 .title {
   font-weight: bold;
-  padding: 5px;
+  padding: 5px 5px 5px 0px;
 }
 .button {
   background-color: black;
@@ -34,4 +35,6 @@
 }
 .input {
   padding: 2px 5px;
+  background-color: rgb(236, 236, 236);
+  border: 0.5px solid grey;
 }

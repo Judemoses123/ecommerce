@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import MainNavbar from "../Navbar/Navbar";
 import style from "./Contact.module.css";
+import HeroImage from "../HeroImage/HeroImage";
 const Contact = () => {
   const nameInputRef = useRef();
   const emailInputRef = useRef();
@@ -36,6 +37,7 @@ const Contact = () => {
   return (
     <>
       <MainNavbar />
+      <HeroImage/>
       <div className={style.main}>
         <span className={style.label}>Contact Us</span>
         <div className={style.form}>

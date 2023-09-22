@@ -1,4 +1,8 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import {
+  RouterProvider,
+  createBrowserRouter,
+  Redirect,
+} from "react-router-dom";
 import About from "./Components/Pages/About";
 import Store from "./Components/Pages/Store";
 import Home from "./Components/Pages/Home";
@@ -6,6 +10,8 @@ import Contact from "./Components/Pages/Contact";
 import Product from "./Components/Pages/Product";
 import StoreContextProvider from "./Components/Pages/StoreContextProvider";
 import CartContextProvider from "./Components/Cart/CartContextProvider";
+import Login from "./Components/Pages/Login";
+import AuthContextProvider from "./Components/Auth/AuthContext";
 function App() {
   const router = createBrowserRouter([
     {
@@ -33,13 +39,19 @@ function App() {
       path: "/contact",
       element: <Contact />,
     },
+    {
+      path: "/login",
+      element: <Login />,
+    },
   ]);
   return (
-    <CartContextProvider>
-      <StoreContextProvider>
-        <RouterProvider router={router}></RouterProvider>
-      </StoreContextProvider>
-    </CartContextProvider>
+    <AuthContextProvider>
+      <CartContextProvider>
+        <StoreContextProvider>
+          <RouterProvider router={router}></RouterProvider>
+        </StoreContextProvider>
+      </CartContextProvider>
+    </AuthContextProvider>
   );
 }
 

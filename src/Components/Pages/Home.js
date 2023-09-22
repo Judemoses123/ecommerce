@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import HeroImage from "../HeroImage/HeroImage";
 import HeroMain from "../Main/HeroMain";
@@ -5,16 +6,18 @@ import MainNavbar from "../Navbar/Navbar";
 const Home = () => {
   return (
     <div style={{ textAlign: "center" }}>
-      <MainNavbar />
+      <MainNavbar showLogin={true}/>
       <HeroImage>
-        <span style={{
+        <button style={{
             color:'white',
             fontSize:'1.5rem',
-            backgroundColor:'darkgrey',
+            backgroundColor:'#0000009e',
+            backdropFilter: 'blur(3px)',
             padding:'0.8rem 2rem',
-            borderRadius:'8px'
+            borderRadius:'8px',
+            border:'none'
             // fontWeight:'bold'
-        }}>Get our Latest Album</span>
+        }}><Link to={`/store`} style={{textDecoration:'none !important', color:"white"}}>Get our Latest Album</Link></button>
         <div
           style={{
             backgroundImage:

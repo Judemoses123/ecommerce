@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import CartContext from '../Cart/CartContext';
 import { Link } from 'react-router-dom';
+import style from './MainCard.module.css';
 function MainCard(props) {
   const ctx= useContext(CartContext);
   const clickHandler=()=>{
@@ -15,7 +16,7 @@ function MainCard(props) {
     ctx.addItems(item);
   }
   return (
-    <Card style={{margin:'1rem',maxWidth:'20vw'}}>
+    <Card className={style.card}>
       <Link to={`/store/${props.id}`}>
       <Card.Img variant="top" src={props.imageUrl} />
       </Link>
