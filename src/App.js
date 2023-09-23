@@ -1,8 +1,4 @@
-import {
-  RouterProvider,
-  createBrowserRouter,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import About from "./Components/Pages/About";
 import Store from "./Components/Pages/Store";
 import Home from "./Components/Pages/Home";
@@ -11,44 +7,31 @@ import Product from "./Components/Pages/Product";
 import StoreContextProvider from "./Components/Pages/StoreContextProvider";
 import CartContextProvider from "./Components/Cart/CartContextProvider";
 import Login from "./Components/Pages/Login";
-import AuthContextProvider from "./Components/Auth/AuthContext";
+import AuthContextProvider, {
+  AuthContext,
+} from "./Components/Auth/AuthContext";
+import { useContext, useEffect, useState } from "react";
+
 function App() {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Home />,
-    },
-    {
-      path: "/home",
-      element: <Home />,
-    },
-    {
-      path: "/store",
-      element: <Store />,
-      exact: true,
-    },
-    {
-      path: "/store/:productID",
-      element: <Product />,
-    },
-    {
-      path: "/about",
-      element: <About />,
-    },
-    {
-      path: "/contact",
-      element: <Contact />,
-    },
-    {
-      path: "/login",
-      element: <Login />,
-    },
-  ]);
+  console.log('reloaded')
+  const AuthCTX = useContext(AuthContext);
+  
   return (
     <AuthContextProvider>
       <CartContextProvider>
         <StoreContextProvider>
-          <RouterProvider router={router}></RouterProvider>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Navigate to="/home" exact />}></Route>
+              <Route path="/home" element={<Home />} />
+              <Route path="/store" element={<Store /> } />
+              <Route path="/store/:productID" element={<Product />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="*" element={<Navigate to="/home" />} />
+            </Routes>
+          </BrowserRouter>
         </StoreContextProvider>
       </CartContextProvider>
     </AuthContextProvider>

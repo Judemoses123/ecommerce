@@ -5,3 +5,7 @@
     top: 0;
     z-index: 2;
 }
+.link{
+    color:  rgb(181, 181, 181);
+    margin: 0 1rem 0 0;
+}

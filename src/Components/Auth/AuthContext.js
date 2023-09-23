@@ -1,30 +1,34 @@
-import React, { useState } from "react"
-export const AuthContext= React.createContext({
-    token:'',
-    isLoggedIn:false,
-    login:(token)=>{},
-    logout:()=>{}
-})
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const AuthContextProvider=(props)=>{
-    const [token, setToken]= useState(null);
-    const loginStatus= !!token;
-    const loginHandler=(token)=>{
-        setToken(token);
-    }
-    const logoutHandler=()=>{
-        setToken(null);
-    }
-    const contextValues={
-        token:token,
-        isLoggedIn:loginStatus,
-        login: loginHandler,
-        logout: logoutHandler
-    }
-    return(
-        <AuthContext.Provider value={contextValues}>
-            {props.children}
-        </AuthContext.Provider>
-    )
-}
+export const AuthContext = React.createContext({
+  token: "",
+  isLoggedIn: false,
+  login: (token) => {},
+  logout: () => {},
+});
+
+const AuthContextProvider = (props) => {
+  const [token, setToken] = useState(null);
+  const [loginStatus, setLoginStatus] = useState(false);
+  const loginHandler = async (token) => {
+    setToken(token);
+    setLoginStatus(true);
+  };
+  const logoutHandler = () => {
+    setToken(null);
+    setLoginStatus(false);
+  };
+  const contextValues = {
+    token: token,
+    isLoggedIn: loginStatus,
+    login: loginHandler,
+    logout: logoutHandler,
+  };
+  return (
+    <AuthContext.Provider value={contextValues}>
+      {props.children}
+    </AuthContext.Provider>
+  );
+};
 export default AuthContextProvider;
