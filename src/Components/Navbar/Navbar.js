@@ -49,7 +49,8 @@ const MainNavbar = (props) => {
             style={{
               borderRadius: "5px",
               border: "none",
-              padding: "0.2rem 1rem",
+              padding: "0.4rem 1rem",
+              backgroundColor:'#0D6EFD',
             }}
           >
             {!AuthCTX.isLoggedIn ? "Login" : "Logout"}

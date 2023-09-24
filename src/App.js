@@ -13,7 +13,7 @@ import AuthContextProvider, {
 import { useContext, useEffect, useState } from "react";
 
 function App() {
-  console.log('reloaded')
+  // console.log('reloaded')
   const AuthCTX = useContext(AuthContext);
   
   return (

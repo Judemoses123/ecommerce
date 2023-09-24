@@ -37,6 +37,7 @@ const Login = () => {
       const data = await response.json();
       // console.log(data);
       await AuthCTX.login(data.idToken);
+      AuthCTX.setEmail(emailRef.current.value);
       // navigate("/store");
       // setTimeout(()=>{
       //   navigate("/store");
@@ -47,7 +48,7 @@ const Login = () => {
     }
   };
   useEffect(() => {
-    console.log('isLoggedIn: ',AuthCTX.isLoggedIn);
+    // console.log('isLoggedIn: ',AuthCTX.isLoggedIn);
   }, [AuthCTX.isLoggedIn, navigate]);
   return (
     <div>

@@ -3,23 +3,22 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 2rem;
-}
-.label {
-  font-weight: bold;
-  font-size: 2rem;
-  font-family: "Metal Mania";
   padding: 1rem;
 }
+.label {
+  font-family: "Metal Mania";
+  font-size: 2rem;
+  font-weight: bold;
+}
 .form {
-  box-shadow: 1px 1px 10px grey;
+  box-shadow: 1px 1px 5px grey;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 50vw;
-  padding: 2rem;
+  padding: 1rem;
   margin: 2rem;
-  border-radius: 5px;
+  border-radius: 1rem;
 }
 .title {
   font-weight: bold;
@@ -35,6 +34,9 @@
 }
 .input {
   padding: 2px 5px;
-  background-color: rgb(236, 236, 236);
   border: 0.5px solid grey;
+  appearance: menulist-button;
+  background-image: none !important;
+  background-color: rgb(232, 240, 254);
+  color: fieldtext !important;
 }
