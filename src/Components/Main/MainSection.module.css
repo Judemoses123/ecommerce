@@ -4,7 +4,8 @@
     font-weight: bold;
 }
 .grid{
-    width: 70vw;
+    box-sizing: border-box;
+    width: 100vw;
     margin:2rem auto;
     padding: 1rem;
     box-sizing: border-box;
@@ -12,10 +13,12 @@
     justify-items: center;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 1rem;
     @media(max-width:550px) {
-        width: 90vw;
+        width: 100vw;
         grid-template-columns: 1fr;
-    }
+    };
+    
 }
 *{
     text-decoration: none !important;

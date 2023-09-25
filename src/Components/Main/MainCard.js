@@ -17,7 +17,7 @@ function MainCard(props) {
   }
   return (
     <Card className={style.card}>
-      <Link to={`/store/${props.id}`}>
+      <Link to={`/store/${props.type}/${props.id}`}>
       <Card.Img variant="top" src={props.imageUrl} />
       </Link>
       <Card.Body >

@@ -18,7 +18,7 @@ const Home = () => {
             border:'none'
             // fontWeight:'bold'
         }}><Link to={`/store`} style={{textDecoration:'none !important', color:"white"}}>Get our Latest Album</Link></button>
-        <div
+        {/* <div
           style={{
             backgroundImage:
               'url(https://www.nicepng.com/png/full/11-118375_citekeeper-is-a-crowdsourced-play-icon-white-png.png)',
@@ -28,7 +28,7 @@ const Home = () => {
             margin:'1rem',
             backgroundRepeat: 'no-repeat'
           }}
-        ></div>
+        ></div> */}
       </HeroImage>
       <HeroMain/>
       <Footer/>

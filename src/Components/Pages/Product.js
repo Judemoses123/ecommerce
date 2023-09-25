@@ -9,14 +9,24 @@ import { Button } from "react-bootstrap";
 import CartContext from "../Cart/CartContext";
 import CartOffCanvas from "../Cart/CartOffCanvas";
 import { useState } from "react";
+import Store from "./Store";
 const Product = () => {
   const params = useParams();
   const StoreCTX = useContext(StoreContext);
   const productsArr = StoreCTX.products;
-  const selected = productsArr.find((item) => {
-    return item.id == params.productID;
-  });
-  console.log(selected);
+  let selected=[];
+  const merchArr = StoreCTX.merch;
+  if(params.type=='music'){
+    selected = productsArr.find((item) => {
+      return item.id == params.productID;
+    });
+  }
+  else if(params.type=='merch'){
+    selected = merchArr.find((item) => {
+      return item.id == params.productID;
+    });
+  }
+  
   const ctx = useContext(CartContext);
   const clickHandler = () => {
     const item = {
@@ -36,8 +46,8 @@ const Product = () => {
   };
   return (
     <>
-      {show && <CartOffCanvas toggleShow={toggleShow} />}
-      <MainNavbar toggleShow={toggleShow} showCartButton={true} />
+      {show && <CartOffCanvas toggleShow={toggleShow} key={selected.title}/>}
+      <MainNavbar  />
       <div className={style.container}>
         <div className={style.left}>
           <div
@@ -65,7 +75,7 @@ const Product = () => {
         {selected.reviews.map((item) => {
         const letterImage= item.username.toString().charAt(0);
           return (
-            <div className={style.review}>
+            <div className={style.review} key={item.review}>
               <div className={style.reviewHeader}>
                 <div className={style.reviewImage}>{letterImage}</div>
                 <div className={style.reviewRight}>

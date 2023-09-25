@@ -15,6 +15,7 @@ const MainSection = (props) => {
                 title={item.title}
                 price={item.price}
                 imageUrl={item.imageUrl}
+                type={props.type}
               />
             
           );

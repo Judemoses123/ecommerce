@@ -11,11 +11,15 @@ import AuthContextProvider, {
   AuthContext,
 } from "./Components/Auth/AuthContext";
 import { useContext, useEffect, useState } from "react";
+import PrivateRoutes from "./Components/PrivateRoutes";
 
 function App() {
   // console.log('reloaded')
   const AuthCTX = useContext(AuthContext);
-  
+  const [loginState, setLoginState] = useState(AuthCTX.isLoggedIn);
+  useEffect(() => {
+    setLoginState(AuthCTX.isLoggedIn);
+  }, [AuthCTX.isLoggedIn]);
   return (
     <AuthContextProvider>
       <CartContextProvider>
@@ -24,8 +28,10 @@ function App() {
             <Routes>
               <Route path="/" element={<Navigate to="/home" exact />}></Route>
               <Route path="/home" element={<Home />} />
-              <Route path="/store" element={<Store /> } />
-              <Route path="/store/:productID" element={<Product />} />
+              <Route element={<PrivateRoutes />}>
+                <Route path="/store" element={<Store />} exact />
+                <Route path="/store/:type/:productID" element={<Product />} />
+              </Route>
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/login" element={<Login />} />

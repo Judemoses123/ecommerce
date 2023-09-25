@@ -19,10 +19,13 @@
   padding: 1rem;
   margin: 2rem;
   border-radius: 1rem;
+  @media(max-width:500px){
+    width: 90vw;
+}
 }
 .title {
   font-weight: bold;
-  padding: 5px 5px 5px 0px;
+  margin: 5px 5px 5px 0px;
 }
 .button {
   background-color: black;
@@ -34,9 +37,11 @@
 }
 .input {
   padding: 2px 5px;
+  margin: 5px 0px;
   border: 0.5px solid grey;
   appearance: menulist-button;
   background-image: none !important;
-  background-color: rgb(232, 240, 254);
+  /* background-color: rgb(232, 240, 254); */
   color: fieldtext !important;
+  border-radius: 2px;
 }

@@ -9,6 +9,7 @@ const CartOverlay = (props) => {
   const clickHandler = () => {
     props.toggleShow();
   };
+  // console.log(ctx.cartItems);
   
   return (
     <>
@@ -26,6 +27,7 @@ const CartOverlay = (props) => {
             <span className={style.quantity}>QUANTITY</span>
           </div>
           {ctx.cartItems.map((item) => {
+            // console.log('this is item>',item);
             return (
               <CartItems
                 key={item.title}
@@ -33,6 +35,7 @@ const CartOverlay = (props) => {
                 price={item.price}
                 imageUrl={item.imageUrl}
                 quantity={item.quantity}
+                _id={item._id}
               />
             );
           })}

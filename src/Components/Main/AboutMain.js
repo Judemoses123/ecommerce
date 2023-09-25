@@ -3,7 +3,7 @@ const AboutMain = () => {
   return (
     <div className={style.main}>
       <span className={style.title}>About</span>
-      <p className={style.para}>
+      <div className={style.para}>
         <div className={style.imageContainer}>
           <div className={style.image}></div>
         </div>
@@ -25,7 +25,7 @@ const AboutMain = () => {
           let their music transport you on a journey that defies boundaries and
           celebrates the enduring power of music.
         </div>
-      </p>
+      </div>
     </div>
   );
 };

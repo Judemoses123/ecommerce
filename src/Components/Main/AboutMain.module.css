@@ -10,8 +10,11 @@
     font-family: 'Metal Mania';
 }
 .para{
-    width: 70%;
+    width: 70vw;
     margin: 2rem;
+    @media (max-width:500px) {
+        width: 70vw;
+    }
 }
 .imageContainer{
     width: 240px;

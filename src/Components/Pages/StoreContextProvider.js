@@ -1,6 +1,7 @@
 import StoreContext from "./StoreContext";
 const StoreContextProvider = (props) => {
   const contextvalues = {
+    
     products: [
       {
         id: 1,
@@ -87,8 +88,48 @@ const StoreContextProvider = (props) => {
         ],
       },
     ],
-
-    // Now each product in the array has a "description" field.
+    merch: [
+      {
+        id: 1,
+        title: "T-Shirt",
+        price: 19.99,
+        imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Shirt.png",
+        description: "A comfortable and stylish T-shirt for everyday wear.",
+        reviews: [
+          {
+            username: "T-ShirtFan",
+            review: "This T-shirt is so comfortable! I wear it all the time.",
+            rating: 4.5,
+          },
+          {
+            username: "Fashionista",
+            review: "Great fit and quality. Highly recommended!",
+            rating: 5.0,
+          },
+        ],
+      },
+      {
+        id: 2,
+        title: "Coffee Cup",
+        price: 6.99,
+        imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Cofee.png",
+        description: "Start your day with this stylish coffee cup.",
+        reviews: [
+          {
+            username: "CoffeeLover",
+            review: "I love this coffee cup! It's the perfect size.",
+            rating: 4.0,
+          },
+          {
+            username: "MugCollector",
+            review: "High-quality mug with a cool design.",
+            rating: 4.5,
+          },
+        ],
+      },
+    ]
+    
+    
   };
   return (
     <StoreContext.Provider value={contextvalues}>

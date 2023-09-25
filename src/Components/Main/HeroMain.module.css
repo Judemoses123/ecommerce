@@ -19,6 +19,7 @@
     margin: 1rem;
     @media (max-width:550px) {
         width: 100vw;
+        
     }
 }
 .item{
@@ -32,6 +33,9 @@
 }
 .date{
     font-weight: bold;
+    @media(max-width:500px){
+        font-size: 0.7rem;
+    }
 }
 .button{
     border: none;
@@ -40,4 +44,17 @@
     padding: 5px;
     border-radius: 5px;
     font-size: small;
+    @media(max-width:500px){
+        font-size: 0.7rem;
+    }
+}
+.city{
+    @media(max-width:500px){
+        font-size: 0.7rem;
+    }
+}
+.venue{
+    @media(max-width:500px){
+        font-size: 0.7rem;
+    }
 }

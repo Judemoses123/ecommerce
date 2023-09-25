@@ -39,7 +39,7 @@ const HeroMain = () => {
       <div className={style.grid}>
         {tours.map((tour) => {
           return (
-            <div className={style.item}>
+            <div className={style.item}  key={tour.city}>
               <span className={style.date}>{tour.date}</span>
               <span className={style.city}>{tour.city}</span>
               <span className={style.venue}>{tour.venue}</span>

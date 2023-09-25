@@ -7,14 +7,14 @@
   position: fixed;
   z-index: 3;
   top: 3rem;
-  right: 1rem;
+  right: 5vw;
   padding: 0rem 1rem 1rem 1rem;
   border-radius: 1rem;
   height: 90vh;
   overflow: auto;
   filter: drop-shadow(1px 1px 5px grey);
   @media (max-width:550px) {
-    width: 100vw;
+    width: 90vw;
   }
 }
 .heading {

@@ -2,6 +2,7 @@ import { useRef } from "react";
 import MainNavbar from "../Navbar/Navbar";
 import style from "./Contact.module.css";
 import HeroImage from "../HeroImage/HeroImage";
+import Footer from "../Footer/Footer";
 const Contact = () => {
   const nameInputRef = useRef();
   const emailInputRef = useRef();
@@ -29,7 +30,6 @@ const Contact = () => {
         throw new Error("Somethiong went Wrong!");
       }
       const data = await response.json();
-      console.log(data);
     } catch (error) {
       console.log(error);
     }
@@ -41,25 +41,26 @@ const Contact = () => {
       <div className={style.main}>
         <span className={style.label}>Contact Us</span>
         <div className={style.form}>
-          <label className={style.title}>Name:</label>
+          <label className={style.title}>Name</label>
           <input ref={nameInputRef} className={style.input} type="text"></input>
-          <label className={style.title}>Email:</label>
+          <label className={style.title}>Email</label>
           <input
             ref={emailInputRef}
             className={style.input}
             type="email"
           ></input>
-          <label className={style.title}>Phone:</label>
+          <label className={style.title}>Phone</label>
           <input
             ref={phoneInputRef}
             className={style.input}
-            type="text"
+            type="number"
           ></input>
           <button onClick={formSubmitHandler} className={style.button}>
             Submit
           </button>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };

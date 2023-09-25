@@ -26,9 +26,14 @@
 }
 .left{
     font-size: 3rem;
-    font-weight: bold;
+    font-family: 'Metal Mania';
     color: white;
-    font-family: pangsong;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media(max-width:500px) {
+        font-size: 1.8rem;
+    }
 }
 .right{
     display: flex;

@@ -5,12 +5,15 @@ import style from "./Login.module.css";
 import { AuthContext } from "../Auth/AuthContext";
 import { useNavigate } from "react-router-dom";
 import HeroImage from "../HeroImage/HeroImage";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 const Login = () => {
   const AuthCTX = useContext(AuthContext);
   const navigate = useNavigate();
   const emailRef = useRef();
   const passwordRef = useRef();
   const [errorMessage, setErrorMessage] = useState("");
+  const [visibility, setVisibility] = useState(false);
   const formSubmitHandler = async (event) => {
     try {
       event.preventDefault();
@@ -38,11 +41,11 @@ const Login = () => {
       // console.log(data);
       await AuthCTX.login(data.idToken);
       AuthCTX.setEmail(emailRef.current.value);
-      // navigate("/store");
+
+      navigate("/store");
       // setTimeout(()=>{
       //   navigate("/store");
       // }, 5000)
-      
     } catch (error) {
       console.log(error);
     }
@@ -50,6 +53,12 @@ const Login = () => {
   useEffect(() => {
     // console.log('isLoggedIn: ',AuthCTX.isLoggedIn);
   }, [AuthCTX.isLoggedIn, navigate]);
+  const visibilityToggle = () => {
+    setVisibility((prev) => {
+      const next = !prev;
+      return next;
+    });
+  };
   return (
     <div>
       <MainNavbar />
@@ -60,11 +69,30 @@ const Login = () => {
           <label className={style.label}>Email</label>
           <input type="email" ref={emailRef} className={style.input}></input>
           <label className={style.label}>Password</label>
-          <input
-            type="password"
-            ref={passwordRef}
-            className={style.input}
-          ></input>
+          <div
+            style={{
+              display: "flex",
+              width: "inherit",
+              display: "flex",
+              width: "inherit",
+              width: "100%",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "0.5rem",
+            }}
+          >
+            <input
+              type={!visibility ? "password" : "text"}
+              ref={passwordRef}
+              className={style.input}
+              style={{width:'100%'}}
+            ></input>
+            {visibility ? (
+              <VisibilityIcon onClick={visibilityToggle} />
+            ) : (
+              <VisibilityOffIcon onClick={visibilityToggle} />
+            )}
+          </div>
           <span
             style={{ fontSize: "small", color: "salmon", fontWeight: "bold" }}
           >

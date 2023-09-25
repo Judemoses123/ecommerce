@@ -16,9 +16,13 @@
 .label {
   color: white;
   font-size: 100px;
-  font-family: "fangsong ariel";
-  font-weight: bold;
+  font-family:'Metal Mania';
+  /* font-weight: bold; */
   text-shadow: 1px 1px 5px black;
+  text-align: center;
+  @media(max-width:500px){
+    font-size: 4rem;
+  }
 }
 .backgroundVideo {
   position: absolute;

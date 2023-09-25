@@ -9,11 +9,12 @@ const CartContextProvider = (props) => {
   const idWithoutAt = id.replace("@", "");
   const idWithoutDot = idWithoutAt.replace(".", "");
   const identifier = idWithoutDot;
-  const baseURL = `https://crudcrud.com/api/b81ea6d696b742139a9e5b717ddd4a50`;
-  console.log(identifier);
+  if (!!identifier) {
+    localStorage.setItem("email", identifier);
+  }
+  const baseURL = `https://crudcrud.com/api/6f8cf1140eea4fa5b3b17d6d67994959`;
   useEffect(
     function () {
-      console.log("user Logged IN");
       fetch(`${baseURL}/cart${identifier}`)
         .then((response) => {
           if (!response.ok) {
@@ -23,7 +24,6 @@ const CartContextProvider = (props) => {
         })
         .then((data) => {
           setItemsState(data);
-          console.log(data);
         })
 
         .catch((error) => {
@@ -35,7 +35,6 @@ const CartContextProvider = (props) => {
 
   const addItem = async (item) => {
     try {
-      console.log(item);
       const response = await fetch(`${baseURL}/cart${identifier}`, {
         method: "POST",
         body: JSON.stringify(item),
@@ -47,29 +46,62 @@ const CartContextProvider = (props) => {
         throw new Error("Oops, Something Went Wrong!");
       }
       const data = await response.json();
-      console.log(data);
-
+      const _id = data._id;
       setItemsState((prev) => {
         const found = prev.find((obj) => {
           return obj.title === item.title;
         });
         if (found) {
           return prev.map((obj) => {
-            console.log(obj, item);
-            return obj.title == item.title
-              ? { ...obj, quantity: obj.quantity + 1 }
-              : obj;
+            const newObj =
+              obj.title == item.title
+                ? { ...obj, quantity: obj.quantity + 1, _id: _id }
+                : obj;
+            return newObj;
           });
         }
-        const newItems = [item, ...prev];
+        const newItems = [{ ...item, _id: _id }, ...prev];
         return newItems;
       });
     } catch (error) {
       console.log(error);
     }
   };
-
-  const removeItem = () => {};
+  const email = localStorage.getItem("email");
+  const removeItem = async (_id) => {
+    try {
+      const response = await fetch(`${baseURL}/cart${email}/${_id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (!response.ok) {
+        throw new Error("remove failed");
+      }
+      setItemsState((prev) => {
+        const found = prev.find((cartitem) => {
+          return cartitem._id == _id;
+        });
+        
+        if (found.quantity > 1) {
+          const newArray = prev.map((cartitems) => {
+            return cartitems._id == _id
+              ? { ...cartitems, quantity: cartitems.quantity - 1 }
+              : cartitems;
+          });
+          return newArray;
+        } else {
+          const newarray = prev.filter((items) => {
+            return items._id != _id;
+          });
+          return newarray;
+        }
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const contextvalues = {
     cartItems: itemsState,
