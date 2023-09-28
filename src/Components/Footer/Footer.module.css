@@ -44,6 +44,6 @@
     display: flex;
     padding: 1rem 2rem;
     background-color: black;
-    width: calc(100vw-2rem);
+    width: 100vw;
     justify-content: space-between;
 }

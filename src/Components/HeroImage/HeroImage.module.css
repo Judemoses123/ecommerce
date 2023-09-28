@@ -1,5 +1,5 @@
 .main {
-  width: calc(100vw-2rem);
+  width: 100vw;
   padding: 1rem;
   background-color: transparent;
   display: flex;
@@ -11,7 +11,6 @@
   background-color: grey;
   background: url("../../bandImage.jpg");
   background-size: cover;
-  backdrop-filter: opacity(50%);
 }
 .label {
   color: white;
