@@ -2,7 +2,7 @@ import style from "./AboutMain.module.css";
 const AboutMain = () => {
   return (
     <div className={style.main}>
-      <span className={style.title}>About</span>
+      <span className={style.title}>About Us</span>
       <div className={style.para}>
         <div className={style.imageContainer}>
           <div className={style.image}></div>

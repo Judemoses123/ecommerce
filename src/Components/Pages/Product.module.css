@@ -38,6 +38,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-position: center;
 }
 .right{
     display: flex;
@@ -68,8 +69,7 @@
     width: 60vw;
     /* background-color: darksalmon; */
     padding: 1rem;
-    border: 1px solid grey;
-    box-shadow: 1px 1px 5px grey;
+    box-shadow: 1px 1px 10px rgb(164, 164, 164);
     border-radius: 1rem;
     margin:1rem;
     @media(max-width:500px){
@@ -95,12 +95,17 @@
     align-items: center;
     justify-content: center;
     color:white;
+    text-shadow: 2px 2px 0px black;
 }
 .username{
     font-style: italic;
 }
 .rating{
     font-weight: bold;
+    align-items: center;
+    justify-content: right;
+    display: flex;
+    gap:5px;
 }
 .reviewText{
     padding: 1rem;

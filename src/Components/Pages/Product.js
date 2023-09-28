@@ -10,7 +10,17 @@ import CartContext from "../Cart/CartContext";
 import CartOffCanvas from "../Cart/CartOffCanvas";
 import { useState } from "react";
 import Store from "./Store";
+import StarIcon from '@mui/icons-material/Star';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 const Product = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Scroll to the top immediately when the URL changes (page navigation)
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   const params = useParams();
   const StoreCTX = useContext(StoreContext);
   const productsArr = StoreCTX.products;
@@ -74,13 +84,17 @@ const Product = () => {
         </span>
         {selected.reviews.map((item) => {
         const letterImage= item.username.toString().charAt(0);
+        const r= 256*Math.random();
+        const g= 256*Math.random();
+        const b= 256*Math.random();
+        const ratingToDecimal= Number(item.rating).toFixed(1);
           return (
             <div className={style.review} key={item.review}>
               <div className={style.reviewHeader}>
-                <div className={style.reviewImage}>{letterImage}</div>
+                <div className={style.reviewImage} style={{backgroundColor:`rgb(${r},${g},${b})`,  textShadow:'2px 2px 2px black;'}}>{letterImage}</div>
                 <div className={style.reviewRight}>
                   <div className={style.username}>{item.username}</div>
-                  <div className={style.rating}>{item.rating}</div>
+                  <div className={style.rating}>{ratingToDecimal}<StarIcon style={{color:'gold'}}/></div>
                 </div>
               </div>
               <p className={style.reviewText}>

@@ -12,13 +12,14 @@
     align-content: center;
     justify-items: center;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 1rem;
+    padding: 0rem 2rem 0rem 1rem;
     @media(max-width:550px) {
         width: 100vw;
         grid-template-columns: 1fr;
+        padding: 1rem;
     };
-    
 }
 *{
     text-decoration: none !important;

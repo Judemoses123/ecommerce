@@ -4,6 +4,7 @@ import style from "./CartOffCanvas.module.css"; // Import your style file here
 import CartContext from "./CartContext";
 import CartItems from "./CartItems";
 import { useContext } from "react";
+import { Button } from "react-bootstrap";
 const CartOverlay = (props) => {
   const ctx = useContext(CartContext);
   const clickHandler = () => {
@@ -43,13 +44,15 @@ const CartOverlay = (props) => {
       )}
       {
         ctx.cartItems.length<=0 && 
-        <div className={style.main} style={{height:'min-content'}}>
+        <div className={style.main}>
           <div className={style.top}>
             <button onClick={clickHandler} className={style.btn}>
               X
             </button>
           </div>
           <span className={style.heading}>Cart Empty, Add Items!</span>
+          <div className={style.bg}/>
+          <Button onClick={clickHandler}>ADD ITEMS</Button>
         </div>
       }
     </>

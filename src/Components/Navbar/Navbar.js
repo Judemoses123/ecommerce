@@ -9,13 +9,11 @@ import { NavLink } from "react-router-dom";
 const MainNavbar = (props) => {
   const navigate = useNavigate();
   const loginHandler = () => {
-    console.log("login");
     navigate("/login");
   };
   const logoutHandler = () => {
-    console.log("logout");
     AuthCTX.logout();
-    AuthCTX.setEmail('');
+    AuthCTX.setEmail("");
   };
   const AuthCTX = useContext(AuthContext);
   return (
@@ -27,18 +25,34 @@ const MainNavbar = (props) => {
     >
       <Container>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse id="basic-navbar-nav" style={{height:'2.5rem'}}>
           <Nav className="me-auto">
-            <NavLink className={style.link} to="/home" activeClassName={style.actives}>
+            <NavLink className={({ isActive, isPending }) => {
+                return isActive ? style.active: style.link;
+              }} to="/home">
               Home
             </NavLink>
-            <NavLink className={style.link} to="/store" activeClassName={style.actives}>
+            <NavLink className={({ isActive, isPending }) => {
+                return isActive ? style.active: style.link;
+              }} to="/store">
               Store
             </NavLink>
-            <NavLink className={style.link} to="/about" activeClassName={style.actives}>
+            <NavLink
+              className={({ isActive, isPending }) => {
+                return isActive ? style.active: style.link;
+              }}
+              to="/about"
+              activeClassName={style.actives}
+            >
               About
             </NavLink>
-            <NavLink className={style.link} to="/contact" activeClassName={style.actives}>
+            <NavLink
+              className={({ isActive, isPending }) => {
+                return isActive ? style.active: style.link;
+              }}
+              to="/contact"
+              activeClassName={style.actives}
+            >
               Contact
             </NavLink>
           </Nav>

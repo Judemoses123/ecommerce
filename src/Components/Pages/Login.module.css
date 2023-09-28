@@ -13,6 +13,8 @@
 }
 .input{
     margin: 5px 0px;
+    background-color: #e8f0fe;
+    border: 0.5px solid rgb(153, 196, 218);
 }
 .login{
     font-family: 'Metal Mania';
@@ -38,4 +40,8 @@
   width: 100vw;
   padding: 1rem;
   
+}
+.eye{
+  position: absolute;
+  right: 5px;
 }

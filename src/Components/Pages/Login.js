@@ -79,6 +79,7 @@ const Login = () => {
               alignItems: "center",
               justifyContent: "center",
               gap: "0.5rem",
+              position:' relative'
             }}
           >
             <input
@@ -88,9 +89,9 @@ const Login = () => {
               style={{width:'100%'}}
             ></input>
             {visibility ? (
-              <VisibilityIcon onClick={visibilityToggle} />
+              <VisibilityIcon className={style.eye} onClick={visibilityToggle} />
             ) : (
-              <VisibilityOffIcon onClick={visibilityToggle} />
+              <VisibilityOffIcon className={style.eye} onClick={visibilityToggle} />
             )}
           </div>
           <span

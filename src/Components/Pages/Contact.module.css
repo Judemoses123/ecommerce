@@ -44,4 +44,7 @@
   /* background-color: rgb(232, 240, 254); */
   color: fieldtext !important;
   border-radius: 2px;
+  margin: 5px 0px;
+    background-color: #e8f0fe;
+    border: 0.5px solid rgb(153, 196, 218);
 }

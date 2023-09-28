@@ -6,7 +6,7 @@
   align-items: center;
   position: fixed;
   z-index: 3;
-  top: 3rem;
+  top: 0rem;
   right: 5vw;
   padding: 0rem 1rem 1rem 1rem;
   border-radius: 1rem;
@@ -71,4 +71,11 @@
   z-index: 3;
   display: flex;
   justify-content: right;
+}
+.bg{
+  width: 80%;
+  height: 80%;
+  background: url('../Images/Hand\ on\ shopping\ cart\ with\ different\ groceries\ or\ products.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
 }

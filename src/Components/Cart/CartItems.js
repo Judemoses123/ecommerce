@@ -18,6 +18,7 @@ const CartItems = (props) => {
     // console.log('this is id>', _id);
     CartCTX.removeItem(_id);
   };
+  const price = Number(props.price).toFixed(2);
   return (
     <div className={style.main}>
       <div className={style.left}>
@@ -27,7 +28,7 @@ const CartItems = (props) => {
         ></div>
         <span className={style.title}>{props.title}</span>
       </div>
-      <span className={style.price}>${props.price}</span>
+      <span className={style.price}>${price}</span>
       <div className={style.quantity}>
         <span className={style.count}>{props.quantity}</span>
         <button onClick={removeHandler} className={style.btn}>
